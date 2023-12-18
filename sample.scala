@@ -17,8 +17,8 @@ val orderDF = spark
 	.option("password", password.value)
 	.option("dbtable", "public.orders")
 	.load
-	.where("updated_at between '2023-01-03 00:00:00' and '2023-01-03 23:59:59')
-        .where("final_state = 'paid')
+	.where("updated_at between '2023-01-03 00:00:00' and '2023-01-03 23:59:59'")
+        .where("final_state = 'paid'")
 
 
 def writeRowsToPostgres(rows: Iterator[Row], conn: Connection): Unit = {
